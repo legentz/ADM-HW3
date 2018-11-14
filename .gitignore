@@ -1,2 +1,6 @@
+# Project
 data/*
 !.gitkeep
+
+# Mac
+.DS_Store
