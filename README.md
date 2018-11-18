@@ -39,3 +39,14 @@ with open('Airbnb_Texas_Rentals.csv', 'r') as csv:
 
 Here you can download the generated [.tsv](https://drive.google.com/file/d/1T0Wku_IY0qVWo21s3J2fghfsBMj0gJPz/view?usp=sharing).
 *Please, do not share with anyone.*
+
+
+1 part Data import and tsv files creation:
+firstly we need to upload csv life as dataframe and fill nan values, then i created another csv file with delimiter \t, as i don't know how to change delimiter any smarter. then i split new csv file to tsv files. probably we can use Leandro's code for that but it doesn't work on my laptop and we need to fill nan-s before tsv files creation.
+
+2 Search Engine
+using library nltk we clean each tsv file and at the same time create vocabulary and index_lst. vocabulary is a set of all words from description and title, and index_lst is a list where each element is a dictionary with key=number of document and value=set of words in this document.
+
+3. inverted index
+for each word in vocabulary stores a list of documents numbers which contain this word
+
