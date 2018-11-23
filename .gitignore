@@ -1,6 +1,7 @@
 # Project
 data/*
 !.gitkeep
+__pycache__/
 
 # Mac
 .DS_Store
