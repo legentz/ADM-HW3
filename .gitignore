@@ -2,6 +2,7 @@
 data/*
 !.gitkeep
 __pycache__/
+.ipynb_checkpoints/
 
 # Mac
 .DS_Store
