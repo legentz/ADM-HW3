@@ -1,6 +1,6 @@
 # Project
 data/*
-!data/store/
+!data/store/store.pkl
 !.gitkeep
 __pycache__/
 .ipynb_checkpoints/
