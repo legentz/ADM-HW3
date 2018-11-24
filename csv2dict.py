@@ -1,5 +1,6 @@
 import os, csv, pickle
 from utils import preprocessing_nltk
+from utils import compute_tfidf
 
 class CSV2Dict:
 	def __init__(self, dataset, delimiter=' ', quotechar='\'', splittsv=None, topickle=None):
@@ -117,6 +118,46 @@ class CSV2Dict:
 				'geo2coords': geo2coords,
 				'docid2geo': docid2geo
 			}
+
+	# todo: load/save features
+	def tfidf_inverse_index(self, word2docid, docid2words):
+
+		# inverse index
+		word2docid_tfidf = {}
+
+		# docid2words_tfidf
+		docid2words_tfidf = {}
+
+		# create inverse index with tfidf
+		for w, docs in word2docid.items():
+			
+			# skip in case we already have a word in the vocabulary
+			if w in word2docid_tfidf.keys(): continue
+			
+			# empty list (of future tuples)
+			word2docid_tfidf[w] = []
+			
+			# for each document that contains w
+			for d in docs:
+				
+				# create an empty structure if it's the first match
+				if not d in docid2words_tfidf.keys():
+					docid2words_tfidf[d] = {}
+				
+				# get document words (all its words)
+				content = docid2words[d]
+				
+				# compute tfidf
+				tfidf = compute_tfidf(content.count(w), len(content), len(docid2words.keys()), len(docs))
+				
+				# fill the vector
+				word2docid_tfidf[w].append((d, tfidf))
+				docid2words_tfidf[d][w] = tfidf
+
+		return {
+			'word2docid_tfidf': word2docid_tfidf,
+			'docid2words_tfidf': docid2words_tfidf
+		}
 
 	def init(self):
 
