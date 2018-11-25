@@ -1,5 +1,5 @@
 # ADM-HW3
-#3 Homework of ADM within the MSc in Data Science @ La Sapienza University
+[#3 Homework](https://github.com/CriMenghini/ADM-2018/tree/master/Homework_3) of [ADM](http://aris.me/index.php/data-mining-ds-2018) within the MSc in Data Science @ La Sapienza University
 
 ## Data
 As being said by the professor, multiple .tsv files have to be created from the dataset 'Airbnb_Texas_Rentals.csv'.
