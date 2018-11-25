@@ -48,3 +48,6 @@ data = csv2dict.init()
 ``` 
 
 The new store.pkl will be store under data/store/ and all tsv files will be generated under data/tsv/, so you won't need to download them. 
+
+## Bonus step
+We provided an exported map (mappa.html) as it's not visible inside the Python Notebook.
